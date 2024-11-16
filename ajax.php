@@ -36,6 +36,11 @@ if($action == 'save_user'){
 	if($save)
 		echo $save;
 }
+if($action == 'delete_client'){
+	$save = $crud->delete_client();
+	if($save)
+		echo $save;
+}
 if($action == 'update_user'){
 	$save = $crud->update_user();
 	if($save)
@@ -46,26 +51,13 @@ if($action == 'delete_user'){
 	if($save)
 		echo $save;
 }
-if($action == 'save_project'){
-	$save = $crud->save_project();
-	if($save)
-		echo $save;
+
+if($action == 'save_client'){
+    $save = $crud->save_client();
+    if($save)
+        echo $save;
 }
-if($action == 'delete_project'){
-	$save = $crud->delete_project();
-	if($save)
-		echo $save;
-}
-if($action == 'save_task'){
-	$save = $crud->save_task();
-	if($save)
-		echo $save;
-}
-if($action == 'delete_task'){
-	$save = $crud->delete_task();
-	if($save)
-		echo $save;
-}
+
 if($action == 'save_progress'){
 	$save = $crud->save_progress();
 	if($save)

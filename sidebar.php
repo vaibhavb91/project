@@ -21,37 +21,33 @@
               </p>
             </a>
           </li>  
+          <!-- client  -->
           <li class="nav-item">
-            <a href="#" class="nav-link nav-edit_project nav-view_project">
+            <a href="#" class="nav-link nav-edit_project nav-view_clients">
               <i class="nav-icon fas fa-layer-group"></i>
               <p>
-                Projects
+                Clients
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
             <?php if($_SESSION['login_type'] != 3): ?>
               <li class="nav-item">
-                <a href="./index.php?page=new_project" class="nav-link nav-new_project tree-item">
+                <a href="./index.php?page=new_clients" class="nav-link nav-new_clients tree-item">
                   <i class="fas fa-angle-right nav-icon"></i>
-                  <p>Add New</p>
+                  <p>Add Clients</p>
                 </a>
               </li>
             <?php endif; ?>
               <li class="nav-item">
-                <a href="./index.php?page=project_list" class="nav-link nav-project_list tree-item">
+                <a href="./index.php?page=clients_list" class="nav-link nav-clients_list tree-item">
                   <i class="fas fa-angle-right nav-icon"></i>
-                  <p>List</p>
+                  <p>Client List</p>
                 </a>
               </li>
             </ul>
           </li> 
-          <li class="nav-item">
-                <a href="./index.php?page=task_list" class="nav-link nav-task_list">
-                  <i class="fas fa-tasks nav-icon"></i>
-                  <p>Task</p>
-                </a>
-          </li>
+         
           <?php if($_SESSION['login_type'] != 3): ?>
            <li class="nav-item">
                 <a href="./index.php?page=reports" class="nav-link nav-reports">

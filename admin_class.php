@@ -234,69 +234,35 @@ Class Action {
 			}
 		}
 	}
-	function save_project(){
-		extract($_POST);
-		$data = "";
-		foreach($_POST as $k => $v){
-			if(!in_array($k, array('id','user_ids')) && !is_numeric($k)){
-				if($k == 'description')
-					$v = htmlentities(str_replace("'","&#x2019;",$v));
-				if(empty($data)){
-					$data .= " $k='$v' ";
-				}else{
-					$data .= ", $k='$v' ";
-				}
-			}
-		}
-		if(isset($user_ids)){
-			$data .= ", user_ids='".implode(',',$user_ids)."' ";
-		}
-		// echo $data;exit;
-		if(empty($id)){
-			$save = $this->db->query("INSERT INTO project_list set $data");
-		}else{
-			$save = $this->db->query("UPDATE project_list set $data where id = $id");
-		}
-		if($save){
-			return 1;
-		}
-	}
-	function delete_project(){
-		extract($_POST);
-		$delete = $this->db->query("DELETE FROM project_list where id = $id");
-		if($delete){
-			return 1;
-		}
-	}
-	function save_task(){
+	
+	function save_client(){
 		extract($_POST);
 		$data = "";
 		foreach($_POST as $k => $v){
 			if(!in_array($k, array('id')) && !is_numeric($k)){
-				if($k == 'description')
-					$v = htmlentities(str_replace("'","&#x2019;",$v));
+				if($k == 'notes')
+					$v = htmlentities(str_replace("'", "&#x2019;", $v));
 				if(empty($data)){
 					$data .= " $k='$v' ";
-				}else{
+				} else {
 					$data .= ", $k='$v' ";
 				}
 			}
 		}
 		if(empty($id)){
-			$save = $this->db->query("INSERT INTO task_list set $data");
-		}else{
-			$save = $this->db->query("UPDATE task_list set $data where id = $id");
+			$save = $this->db->query("INSERT INTO clients SET $data");
+		} else {
+			$save = $this->db->query("UPDATE clients SET $data WHERE id = $id");
 		}
 		if($save){
 			return 1;
 		}
 	}
-	function delete_task(){
+	function delete_client(){
 		extract($_POST);
-		$delete = $this->db->query("DELETE FROM task_list where id = $id");
-		if($delete){
+		$delete = $this->db->query("DELETE FROM clients where id = ".$id);
+		if($delete)
 			return 1;
-		}
 	}
 	function save_progress(){
 		extract($_POST);

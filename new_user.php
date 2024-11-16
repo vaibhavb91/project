@@ -19,24 +19,13 @@
 						<div class="form-group">
 							<label for="" class="control-label">User Role</label>
 							<select name="type" id="type" class="custom-select custom-select-sm">
-								<option value="3" <?php echo isset($type) && $type == 3 ? 'selected' : '' ?>>Employee</option>
-								<option value="2" <?php echo isset($type) && $type == 2 ? 'selected' : '' ?>>Project Manager</option>
+								<option value="2" <?php echo isset($type) && $type == 2 ? 'selected' : '' ?>>Staff</option>
 								<option value="1" <?php echo isset($type) && $type == 1 ? 'selected' : '' ?>>Admin</option>
 							</select>
 						</div>
 						<?php else: ?>
 							<input type="hidden" name="type" value="3">
 						<?php endif; ?>
-						<div class="form-group">
-							<label for="" class="control-label">Avatar</label>
-							<div class="custom-file">
-		                      <input type="file" class="custom-file-input" id="customFile" name="img" onchange="displayImg(this,$(this))">
-		                      <label class="custom-file-label" for="customFile">Choose file</label>
-		                    </div>
-						</div>
-						<div class="form-group d-flex justify-content-center align-items-center">
-							<img src="<?php echo isset($avatar) ? 'assets/uploads/'.$avatar :'' ?>" alt="Avatar" id="cimg" class="img-fluid img-thumbnail ">
-						</div>
 					</div>
 					<div class="col-md-6">
 						
@@ -66,14 +55,6 @@
 		</div>
 	</div>
 </div>
-<style>
-	img#cimg{
-		height: 15vh;
-		width: 15vh;
-		object-fit: cover;
-		border-radius: 100% 100%;
-	}
-</style>
 <script>
 	$('[name="password"],[name="cpass"]').keyup(function(){
 		var pass = $('[name="password"]').val()
@@ -88,16 +69,6 @@
 			}
 		}
 	})
-	function displayImg(input,_this) {
-	    if (input.files && input.files[0]) {
-	        var reader = new FileReader();
-	        reader.onload = function (e) {
-	        	$('#cimg').attr('src', e.target.result);
-	        }
-
-	        reader.readAsDataURL(input.files[0]);
-	    }
-	}
 	$('#manage_user').submit(function(e){
 		e.preventDefault()
 		$('input').removeClass("border-danger")

@@ -35,8 +35,8 @@ if($_SESSION['login_type'] != 1)
     <div class="col-md-3 col-sm-6">
       <div class="small-box bg-light shadow-sm border">
         <div class="inner">
-          <h3><?php echo $conn->query("SELECT * FROM project_list $where")->num_rows; ?></h3>
-          <p>Total Projects</p>
+          <h3><?php echo $conn->query("SELECT * FROM clients $where")->num_rows; ?></h3>
+          <p>Total Clients</p>
         </div>
         <div class="icon">
           <i class="fa fa-layer-group"></i>
@@ -45,7 +45,7 @@ if($_SESSION['login_type'] != 1)
     </div>
 
     <!-- Second Box -->
-    <div class="col-md-3 col-sm-6">
+    <!-- <div class="col-md-3 col-sm-6">
       <div class="small-box bg-light shadow-sm border">
         <div class="inner">
           <h3><?php echo $conn->query("SELECT * FROM project_list $where")->num_rows; ?></h3>
@@ -55,33 +55,8 @@ if($_SESSION['login_type'] != 1)
           <i class="fa fa-layer-group"></i>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <!-- Third Box -->
-    <div class="col-md-3 col-sm-6">
-      <div class="small-box bg-light shadow-sm border">
-        <div class="inner">
-          <h3><?php echo $conn->query("SELECT * FROM project_list $where")->num_rows; ?></h3>
-          <p>Total Projects</p>
-        </div>
-        <div class="icon">
-          <i class="fa fa-layer-group"></i>
-        </div>
-      </div>
-    </div>
-
-    <!-- Fourth Box -->
-    <div class="col-md-3 col-sm-6">
-      <div class="small-box bg-light shadow-sm border">
-        <div class="inner">
-          <h3><?php echo $conn->query("SELECT * FROM project_list $where")->num_rows; ?></h3>
-          <p>Total Projects</p>
-        </div>
-        <div class="icon">
-          <i class="fa fa-layer-group"></i>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
