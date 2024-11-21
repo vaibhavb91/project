@@ -26,15 +26,15 @@
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="form-group">
-                            <label class="control-label">Gender</label>
-                            <select class="form-control form-control-sm" name="gender">
-                                <option value="">Select</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
+                    <div class="form-group">
+        <label class="control-label">Gender</label>
+        <select class="form-control form-control-sm" name="gender">
+            <option value="">Select</option>
+            <option value="Male" <?php echo isset($gender) && $gender == 'Male' ? 'selected' : '' ?>>Male</option>
+            <option value="Female" <?php echo isset($gender) && $gender == 'Female' ? 'selected' : '' ?>>Female</option>
+            <option value="Other" <?php echo isset($gender) && $gender == 'Other' ? 'selected' : '' ?>>Other</option>
+        </select>
+    </div>
                     </div>
                 </div>
 
@@ -60,48 +60,51 @@
                             </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="form-group">
-                            <label class="control-label">State</label>
-                            <select class="form-control form-control-sm" name="state">
-                            <option value="">Select State</option>
-                                <option value="Andhra Pradesh">Andhra Pradesh</option>
-                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                                <option value="Assam">Assam</option>
-                                <option value="Bihar">Bihar</option>
-                                <option value="Chhattisgarh">Chhattisgarh</option>
-                                <option value="Goa">Goa</option>
-                                <option value="Gujarat">Gujarat</option>
-                                <option value="Haryana">Haryana</option>
-                                <option value="Himachal Pradesh">Himachal Pradesh</option>
-                                <option value="Jharkhand">Jharkhand</option>
-                                <option value="Karnataka">Karnataka</option>
-                                <option value="Kerala">Kerala</option>
-                                <option value="Madhya Pradesh">Madhya Pradesh</option>
-                                <option value="Maharashtra">Maharashtra</option>
-                                <option value="Manipur">Manipur</option>
-                                <option value="Meghalaya">Meghalaya</option>
-                                <option value="Mizoram">Mizoram</option>
-                                <option value="Nagaland">Nagaland</option>
-                                <option value="Odisha">Odisha</option>
-                                <option value="Punjab">Punjab</option>
-                                <option value="Rajasthan">Rajasthan</option>
-                                <option value="Sikkim">Sikkim</option>
-                                <option value="Tamil Nadu">Tamil Nadu</option>
-                                <option value="Telangana">Telangana</option>
-                                <option value="Tripura">Tripura</option>
-                                <option value="Uttar Pradesh">Uttar Pradesh</option>
-                                <option value="Uttarakhand">Uttarakhand</option>
-                                <option value="West Bengal">West Bengal</option>
-                                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-                                <option value="Chandigarh">Chandigarh</option>
-                                <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
-                                <option value="Lakshadweep">Lakshadweep</option>
-                                <option value="Delhi">Delhi</option>
-                                <option value="Puducherry">Puducherry</option>
-                                <option value="Ladakh">Ladakh</option>
-                                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-                            </select>
-                        </div>
+                    <div class="form-group">
+        <label class="control-label">State</label>
+        <select class="form-control form-control-sm" name="state">
+            <option value="">Select State</option>
+            <option value="Andaman and Nicobar Islands" <?php echo isset($state) && $state == 'Andaman and Nicobar Islands' ? 'selected' : '' ?>>Andaman and Nicobar Islands</option>
+            <option value="Andhra Pradesh" <?php echo isset($state) && $state == 'Andhra Pradesh' ? 'selected' : '' ?>>Andhra Pradesh</option>
+            <option value="Arunachal Pradesh" <?php echo isset($state) && $state == 'Arunachal Pradesh' ? 'selected' : '' ?>>Arunachal Pradesh</option>
+            <option value="Assam" <?php echo isset($state) && $state == 'Assam' ? 'selected' : '' ?>>Assam</option>
+            <option value="Bihar" <?php echo isset($state) && $state == 'Bihar' ? 'selected' : '' ?>>Bihar</option>
+            <option value="Chandigarh" <?php echo isset($state) && $state == 'Chandigarh' ? 'selected' : '' ?>>Chandigarh</option>
+            <option value="Chhattisgarh" <?php echo isset($state) && $state == 'Chhattisgarh' ? 'selected' : '' ?>>Chhattisgarh</option>
+            <option value="Dadra and Nagpur Haveli" <?php echo isset($state) && $state == 'Dadra and Nagpur Haveli' ? 'selected' : '' ?>>Dadra and Nagpur Haveli</option>
+            <option value="Daman and Diu" <?php echo isset($state) && $state == 'Daman and Diu' ? 'selected' : '' ?>>Daman and Diu</option>
+            <option value="Delhi" <?php echo isset($state) && $state == 'Delhi' ? 'selected' : '' ?>>Delhi</option>
+            <option value="Goa" <?php echo isset($state) && $state == 'Goa' ? 'selected' : '' ?>>Goa</option>
+            <option value="Gujarat" <?php echo isset($state) && $state == 'Gujarat' ? 'selected' : '' ?>>Gujarat</option>
+            <option value="Haryana" <?php echo isset($state) && $state == 'Haryana' ? 'selected' : '' ?>>Haryana</option>
+            <option value="Himachal Pradesh" <?php echo isset($state) && $state == 'Himachal Pradesh' ? 'selected' : '' ?>>Himachal Pradesh</option>
+            <option value="Jammu and Kashmir" <?php echo isset($state) && $state == 'Jammu and Kashmir' ? 'selected' : '' ?>>Jammu and Kashmir</option>
+            <option value="Jharkhand" <?php echo isset($state) && $state == 'Jharkhand' ? 'selected' : '' ?>>Jharkhand</option>
+            <option value="Karnataka" <?php echo isset($state) && $state == 'Karnataka' ? 'selected' : '' ?>>Karnataka</option>
+            <option value="Kerala" <?php echo isset($state) && $state == 'Kerala' ? 'selected' : '' ?>>Kerala</option>
+            <option value="Lakshadweep" <?php echo isset($state) && $state == 'Lakshadweep' ? 'selected' : '' ?>>Lakshadweep</option>
+            <option value="Madhya Pradesh" <?php echo isset($state) && $state == 'Madhya Pradesh' ? 'selected' : '' ?>>Madhya Pradesh</option>
+            <option value="Maharashtra" <?php echo isset($state) && $state == 'Maharashtra' ? 'selected' : '' ?>>Maharashtra</option>
+            <option value="Manipur" <?php echo isset($state) && $state == 'Manipur' ? 'selected' : '' ?>>Manipur</option>
+            <option value="Meghalaya" <?php echo isset($state) && $state == 'Meghalaya' ? 'selected' : '' ?>>Meghalaya</option>
+            <option value="Mizoram" <?php echo isset($state) && $state == 'Mizoram' ? 'selected' : '' ?>>Mizoram</option>
+            <option value="Nagaland" <?php echo isset($state) && $state == 'Nagaland' ? 'selected' : '' ?>>Nagaland</option>
+            <option value="Narora" <?php echo isset($state) && $state == 'Narora' ? 'selected' : '' ?>>Narora</option>
+            <option value="Natwar" <?php echo isset($state) && $state == 'Natwar' ? 'selected' : '' ?>>Natwar</option>
+            <option value="Odisha" <?php echo isset($state) && $state == 'Odisha' ? 'selected' : '' ?>>Odisha</option>
+            <option value="Paschim Medinipur" <?php echo isset($state) && $state == 'Paschim Medinipur' ? 'selected' : '' ?>>Paschim Medinipur</option>
+            <option value="Pondicherry" <?php echo isset($state) && $state == 'Pondicherry' ? 'selected' : '' ?>>Pondicherry</option>
+            <option value="Rajasthan" <?php echo isset($state) && $state == 'Rajasthan' ? 'selected' : '' ?>>Rajasthan</option>
+            <option value="Sikkim" <?php echo isset($state) && $state == 'Sikkim' ? 'selected' : '' ?>>Sikkim</option>
+            <option value="Tamil Nadu" <?php echo isset($state) && $state == 'Tamil Nadu' ? 'selected' : '' ?>>Tamil Nadu</option>
+            <option value="Telangana" <?php echo isset($state) && $state == 'Telangana' ? 'selected' : '' ?>>Telangana</option>
+            <option value="Tripura" <?php echo isset($state) && $state == 'Tripura' ? 'selected' : '' ?>>Tripura</option>
+            <option value="Uttar Pradesh" <?php echo isset($state) && $state == 'Uttar Pradesh' ? 'selected' : '' ?>>Uttar Pradesh</option>
+            <option value="Uttarakhand" <?php echo isset($state) && $state == 'Uttarakhand' ? 'selected' : '' ?>>Uttarakhand</option>
+            <option value="Vaishali" <?php echo isset($state) && $state == 'Vaishali' ? 'selected' : '' ?>>Vaishali</option>
+            <option value="West Bengal" <?php echo isset($state) && $state == 'West Bengal' ? 'selected' : '' ?>>West Bengal</option>
+        </select>
+    </div>
                     </div>                </div>
                 <div class="row">
                   
@@ -132,7 +135,7 @@
         <div class="card-footer border-top border-info">
             <div class="d-flex w-100 justify-content-center align-items-center">
                 <button class="btn btn-flat bg-gradient-primary mx-2" form="manage-client">Save</button>
-                <button class="btn btn-flat bg-gradient-secondary mx-2" type="button" onclick="location.href='index.php?page=client_list'">Cancel</button>
+                <button class="btn btn-flat bg-gradient-secondary mx-2" type="button" onclick="location.href='index.php?page=clients_list'">Cancel</button>
             </div>
         </div>
     </div>

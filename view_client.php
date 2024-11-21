@@ -59,10 +59,7 @@ if (isset($_GET['id'])) {
 					<h6 class="text-muted">Referred By</h6>
 					<p><?php echo $referred_by; ?></p>
 				</div>
-				<div class="col-md-3 mb-3">
-					<h6 class="text-muted">Role</h6>
-					<p><?php echo isset($type) ? $type : 'Not Specified'; ?></p>
-				</div>
+
 			</div>
 		</div>
 		<div class="card-footer text-right">

@@ -20,26 +20,6 @@
 					</tr>
 				</thead>
 				<tbody>
-					<?php
-					$i = 1;
-					$type = array('', "Admin", "Staff");
-					$qry = $conn->query("SELECT * FROM clients"); // Corrected SQL syntax
-					while ($row = $qry->fetch_assoc()):
-					?>
-					<tr>
-						<th class="text-center"><?php echo $i++; ?></th>
-						<td><b><?php echo ucwords($row['name']); ?></b></td>
-						<td><?php echo $row['birth_date']; ?></td>
-						<td><?php echo $row['mobile_no']; ?></td>
-						<td><?php echo $row['address']; ?></td>
-						<td><?php echo $row['email']; ?></td>
-						<td class="text-center">
-		                      <a class="dropdown-item view_client" href="javascript:void(0)" data-id="<?php echo $row['id']; ?>">View</a>
-		                      <a class="dropdown-item" href="./index.php?page=edit_user&id=<?php echo $row['id']; ?>">Edit</a>
-		                      <a class="dropdown-item delete_client" href="javascript:void(0)" data-id="<?php echo $row['id']; ?>">Delete</a>
-						</td>
-					</tr>	
-					<?php endwhile; ?>
 				</tbody>
 			</table>
 		</div>
@@ -48,27 +28,49 @@
 
 <script>
 	$(document).ready(function(){
-		$('#list').dataTable()
-	$('.view_client').click(function(){
-		uni_modal("<i class='fa fa-id-card'></i> Client Details","view_client.php?id="+$(this).attr('data-id'))
+		$('#list').DataTable({
+			"processing": true,
+			"serverSide": true,
+			"ajax": {
+				"url": "fetch_clients.php",
+				"type": "POST"
+			},
+			"columns": [
+				{ "data": "id" },
+				{ "data": "name" },
+				{ "data": "birth_date" },
+				{ "data": "mobile_no" },
+				{ "data": "address" },
+				{ "data": "email" },
+				{
+					"data": "action",
+					"orderable": false,
+					"searchable": false
+				}
+			]
+		});
+
+		// Client Details and Delete Actions
+		$('#list').on('click', '.view_client', function(){
+			uni_modal("<i class='fa fa-id-card w-100'></i> Client Details","view_client.php?id="+$(this).attr('data-id'))
+		})
+		$('#list').on('click', '.delete_client', function(){
+			_conf("Are you sure to delete this client?","delete_client",[$(this).attr('data-id')])
+		})
 	})
-	$('.delete_client').click(function(){
-	_conf("Are you sure to delete this user?","delete_client",[$(this).attr('data-id')])
-	})
-	})
-	function delete_client($id){
+
+	function delete_client(id){
 		start_load()
 		$.ajax({
-			url:'ajax.php?action=delete_client',
-			method:'POST',
-			data:{id:$id},
-			success:function(resp){
-				if(resp==1){
-					alert_toast("Data successfully deleted",'success')
+			url: 'ajax.php?action=delete_client',
+			method: 'POST',
+			data: { id: id },
+			success: function(resp){
+				if(resp == 1){
+					alert_toast("Data successfully deleted", 'success')
 					setTimeout(function(){
-						location.reload()
-					},1500)
-
+						$('#list').DataTable().ajax.reload()
+					}, 1500)
 				}
 			}
 		})
