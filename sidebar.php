@@ -47,7 +47,33 @@
               </li>
             </ul>
           </li> 
-         
+         <!-- sell  -->
+         <li class="nav-item">
+            <a href="#" class="nav-link nav-edit_project nav-view_clients">
+              <i class="nav-icon fas fa-layer-group"></i>
+              <p>
+              Sell Management
+
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+            <?php if($_SESSION['login_type'] != 3): ?>
+              <li class="nav-item">
+                <a href="./index.php?page=new_sell_management" class="nav-link nav-new_sell_management tree-item">
+                  <i class="fas fa-angle-right nav-icon"></i>
+                  <p>Add Sell</p>
+                </a>
+              </li>
+            <?php endif; ?>
+              <li class="nav-item">
+                <a href="./index.php?page=sell_list" class="nav-link nav-sell_list tree-item">
+                  <i class="fas fa-angle-right nav-icon"></i>
+                  <p>Sell List</p>
+                </a>
+              </li>
+            </ul>
+          </li> 
           <?php if($_SESSION['login_type'] != 3): ?>
            <li class="nav-item">
                 <a href="./index.php?page=reports" class="nav-link nav-reports">

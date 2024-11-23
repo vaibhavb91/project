@@ -41,10 +41,11 @@ while ($row = $result->fetch_assoc()) {
     $row_data['mobile_no'] = $row['mobile_no'];
     $row_data['address'] = $row['address'];
     $row_data['email'] = $row['email'];
-    $row_data['action'] = '<a class="dropdown-item view_client" href="javascript:void(0)" data-id="' . $row['id'] . '">View</a>
-                          <a class="dropdown-item" href="./index.php?page=edit_client&id=' . $row['id'] . '">Edit</a>
-                          <a class="dropdown-item delete_client" href="javascript:void(0)" data-id="' . $row['id'] . '">Delete</a>';
-    $data[] = $row_data;
+    $row_data['action'] = '<a class="dropdown-item fas fa-eye view_client" href="javascript:void(0)" data-id="' . $row['id'] . '" style="font-size: 16px; color: #007bff;"></a>
+                      <a class="dropdown-item fas fa-edit" href="./index.php?page=edit_client&id=' . $row['id'] . '" style="font-size: 16px; color: #28a745;"></a>
+                      <a class="dropdown-item fas fa-trash delete_client" href="javascript:void(0)" data-id="' . $row['id'] . '" style="font-size: 16px; color: #dc3545;">Delete</a>';
+$data[] = $row_data;
+
 }
 
 // Prepare response

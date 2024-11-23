@@ -57,6 +57,11 @@ if($action == 'save_client'){
     if($save)
         echo $save;
 }
+if($action == 'save_sale'){
+    $save = $crud->save_sale();
+    if($save)
+        echo $save;
+}
 
 if($action == 'save_progress'){
 	$save = $crud->save_progress();

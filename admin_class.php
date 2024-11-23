@@ -258,6 +258,31 @@ Class Action {
 			return 1;
 		}
 	}
+
+	function save_sale(){
+		extract($_POST);
+		$data = "";
+		foreach($_POST as $k => $v){
+			if(!in_array($k, array('id')) && !is_numeric($k)){
+				if($k == 'notes')
+					$v = htmlentities(str_replace("'", "&#x2019;", $v));
+				if(empty($data)){
+					$data .= " $k='$v' ";
+				} else {
+					$data .= ", $k='$v' ";
+				}
+			}
+		}
+		if(empty($id)){
+			$save = $this->db->query("INSERT INTO sales SET $data");
+		} else {
+			$save = $this->db->query("UPDATE sales SET $data WHERE id = $id");
+		}
+		if($save){
+			return 1;
+		}
+	}
+
 	function delete_client(){
 		extract($_POST);
 		$delete = $this->db->query("DELETE FROM clients where id = ".$id);
